@@ -1,0 +1,42 @@
+CODE 01:
+import React from "react"
+
+type GreetingProps={
+ name:string,
+}
+const Greeting = ({ name }:GreetingProps) => { 
+return <div>Hello, {name}!</div>;
+ };
+ export default Greeting;
+
+CODE 02:
+import React, { Component } from 'react';
+
+interface CounterState {
+    count: number; 
+}
+
+class Counter extends Component<{}, CounterState> {
+    // Initialisation de l'état
+    state: CounterState = {
+        count: 0
+    };
+
+    // Méthode pour incrémenter le compteur
+    increment = () => {
+        this.setState({ count: this.state.count + 1 });
+    };
+
+    
+    render() {
+        return (
+            <div>
+                <p>Count: {this.state.count}</p>
+                <button onClick={this.increment}>Increment</button>
+            </div>
+        );
+    }
+}
+
+
+export default Counter;
